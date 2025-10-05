@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #     }
 # }
 
-#postgresql://postgres:JXLSZhyOzkFgcabcWrYfMePrAzFhMKiQ@ballast.proxy.rlwy.net:53123/railway
+#postgresql://postgres:DXbyyJMiULtBSnTWuEcTHffjliOvRfsg@crossover.proxy.rlwy.net:36119/railway
 
 
 DATABASES = {
@@ -91,9 +91,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME':'railway',
         'USER': 'postgres',
-        'PASSWORD': 'JXLSZhyOzkFgcabcWrYfMePrAzFhMKiQ',
-        'HOST': 'ballast.proxy.rlwy.net',
-        'PORT': '53123',
+        'PASSWORD': 'DXbyyJMiULtBSnTWuEcTHffjliOvRfsg',
+        'HOST': 'crossover.proxy.rlwy.net',
+        'PORT': '36119',
     }
 }
 
