@@ -86,14 +86,30 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #postgresql://postgres:DXbyyJMiULtBSnTWuEcTHffjliOvRfsg@crossover.proxy.rlwy.net:36119/railway
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME':'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'DXbyyJMiULtBSnTWuEcTHffjliOvRfsg',
+#         'HOST': 'crossover.proxy.rlwy.net',
+#         'PORT': '36119',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'DXbyyJMiULtBSnTWuEcTHffjliOvRfsg',
-        'HOST': 'crossover.proxy.rlwy.net',
-        'PORT': '36119',
+        'ENGINE': 'djongo',
+        'NAME': 'LawChaiAi',   # 👈 your MongoDB database name
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            
+            'host': 'mongodb+srv://mixmemebth_db_user:cUwbSqhRRGwvTLyC@lawchatai.skyemil.mongodb.net/LawChaiAi?retryWrites=true&w=majority&appName=LawChatAi',
+            
+            'tls': True,
+            'tlsAllowInvalidCertificates': True,
+        }  
     }
 }
 
