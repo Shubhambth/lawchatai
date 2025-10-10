@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-
+from mongoengine import connect
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -98,20 +98,30 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # }
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'LawChaiAi',   # 👈 your MongoDB database name
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'LawChaiAi',   # 👈 your MongoDB database name
+#         'ENFORCE_SCHEMA': False,
+#         'CLIENT': {
             
-            'host': 'mongodb+srv://mixmemebth_db_user:cUwbSqhRRGwvTLyC@lawchatai.skyemil.mongodb.net/LawChaiAi?retryWrites=true&w=majority&appName=LawChatAi',
+#             'host': 'mongodb+srv://mixmemebth_db_user:cUwbSqhRRGwvTLyC@lawchatai.skyemil.mongodb.net/LawChaiAi?retryWrites=true&w=majority&appName=LawChatAi',
             
-            'tls': True,
-            'tlsAllowInvalidCertificates': True,
-        }  
-    }
-}
+#             'tls': True,
+#             'tlsAllowInvalidCertificates': True,
+#         }  
+#     }
+# }
+
+
+
+connect(
+    db="LawChaiAi",
+    host="mongodb+srv://mixmemebth_db_user:cUwbSqhRRGwvTLyC@lawchatai.skyemil.mongodb.net/LawChaiAi",
+    username="mixmemebth_db_user",
+    password="cUwbSqhRRGwvTLyC",
+    tls=True,
+)
 
 
 # Password validation
